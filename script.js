@@ -1,15 +1,10 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
- 
-<script>   
+
+$("button").click(function() {
+    var $num = $("input").val();
+    $(".roman").text(roman($num));  
+});
+
 function roman(num) {
     var arr = [], roman = [];
     var arr1 = [];
@@ -38,21 +33,12 @@ function roman(num) {
     arr1.reverse();
 
     for(i = 0; i < arr1.length; i++) {
-
         for (var key in rom) {
             if( key === arr1[i]+"") {
                 roman[i] = rom[key];                 
             }              
         }        
     }
-    console.log(roman.join(""));
+    return roman.join("");
 }
-
-roman(3999);
-
-</script>    
-</body>
-</html>
-
-
 
